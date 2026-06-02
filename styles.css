@@ -8,6 +8,7 @@ accent color: #284b63;
 
 body {
     color: #353535;
+    max-width: 800px;
 }
 
 #eventRegistrationForm {
@@ -17,4 +18,5 @@ body {
     background-color: #d9d9d9;
     border: 1px solid #284b63;
     border-radius: 18px;
+    padding: 32px;
 }
