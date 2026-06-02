@@ -12,7 +12,7 @@ form.addEventListener("submit", function(event){
 
     console.log("Form is submitted");
     console.log("Full Name:", fullName.value);
-    console.log("Email:", email.value);
+    
     console.log("Occupants:", occupants.value);
     console.log("Sin Number:", sin.value);
     console.log("Language spoken:", language.value);
@@ -25,15 +25,24 @@ form.addEventListener("submit", function(event){
 
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     if (emailPattern.test(email.value)) {
-        console.log(email.value)
-        console.log("valid email")
+        console.log(`Email: ${email.value}`);
     } else {
-
-<<<<<<< HEAD
         showError(email, "Please enter valid format")
-        console.log("invalid email")
     }
 
+    const phonePattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/
+    if (phonePattern.test(phone.value)) {
+        console.log("Phone Number:", phone.value)
+    } else {
+
+    }
+
+    const occupantPattern = /^\d{2}$/;
+    if (occupantPattern.test(occupants.value)) {
+        console.log(`Number of Occupants: ${occupants}`)
+    } else {
+        showError(occupants, "Please enter a valid occupant number.")
+    }
 });
 
 function showError(element, message) {
@@ -43,14 +52,3 @@ function showError(element, message) {
     mess.style.color = "red";
     element.before(mess)
 }
-=======
-    const phonePattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/
-    if (phonePattern.test(phone.value)) {
-        console.log(phone.value)
-        console.log("valid phone")
-    } else {
-        console.log("invalid phone")
-        console.log(phone.value)
-    }
-});
->>>>>>> 3ac72119dc65e992bbf5b0d121d5bafc87cdeafa
