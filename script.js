@@ -17,6 +17,11 @@ form.addEventListener("submit", function(event){
     // console.log("Language spoken:", language.value);
     
 
+    if (fullName.value.trim().length < 3) {
+        showError(fullName, "Please enter Name with 3 letters or more")
+    } else {
+        console.log("Full Name:", fullName.value);
+    }
 
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     if (emailPattern.test(email.value)) {
@@ -44,6 +49,14 @@ form.addEventListener("submit", function(event){
         showError(langSection, "Please choose a language.")
     } else {
         console.log("Language spoken at home:", language.value)
+    }
+
+    const sinPattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{3}$/;
+    if (sinPattern.test(sin.value)) {
+        console.log("Sin Number:", sin.value)
+    } else {
+        showError(sin, "Please enter a valid sin number")
+    
     }
     
 });
