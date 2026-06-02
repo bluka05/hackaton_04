@@ -16,5 +16,11 @@ form.addEventListener("submit", function(event){
     console.log("Occupants:", occupants.value);
     console.log("Sin Number:", sin.value);
     console.log("Language spoken:", language.value);
+    
+
+    if (fullName.value.trim().length < 3) {
+        errorMessage.textContent = "Full name must be at least 3 characters.";
+        isValid = false;
+    }
 
 });
