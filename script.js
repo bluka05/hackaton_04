@@ -23,4 +23,12 @@ form.addEventListener("submit", function(event){
         console.log("valid email")
     } else console.log("invalid email")
 
+    const phonePattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/
+    if (phonePattern.test(phone.value)) {
+        console.log(phone.value)
+        console.log("valid phone")
+    } else {
+        console.log("invalid phone")
+        console.log(phone.value)
+    }
 });
