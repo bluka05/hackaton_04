@@ -24,10 +24,27 @@ body {
     margin: 18px;
 }
 
-label {
+label, p {
     font-size: 24px;
 }
 
 input {
     height: 30px;
+}
+
+#language-section {
+    margin-top: -16px;
+    padding-bottom: 16px;
+}
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.radio-btn > input {
+    height: 18px;
+    width: 18px;
 }
