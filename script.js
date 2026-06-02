@@ -27,6 +27,18 @@ form.addEventListener("submit", function(event){
     if (emailPattern.test(email.value)) {
         console.log(email.value)
         console.log("valid email")
-    } else console.log("invalid email")
+    } else {
+
+        showError(email, "Please enter valid format")
+        console.log("invalid email")
+    }
 
 });
+
+function showError(element, message) {
+    const mess = document.createElement("p")
+    mess.style.margin = 0
+    mess.textContent = message
+    mess.style.color = "red";
+    element.before(mess)
+}
