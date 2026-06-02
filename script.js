@@ -32,14 +32,12 @@ form.addEventListener("submit", function(event){
 
     const phonePattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/
     if (phonePattern.test(phone.value)) {
-    } else {
-        showError(phone, "Please enter a valid phone number")
-    }
-
         console.log("Phone Number:", phone.value)
     } else {
-
+        showError(phone, "Please enter a valid phone number")
+    
     }
+
 
     const occupantPattern = /^\d{2}$/;
     if (occupantPattern.test(occupants.value)) {
@@ -47,6 +45,7 @@ form.addEventListener("submit", function(event){
     } else {
         showError(occupants, "Please enter a valid occupant number.")
     }
+    
 });
 
 function showError(element, message) {
