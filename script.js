@@ -8,7 +8,7 @@ form.addEventListener("submit", function(event){
     const phone = document.getElementById("phone");
     const occupants = document.getElementById("occupants");
     const sin = document.getElementById("sin");
-    const language = document.getElementById("language");
+    const language = document.querySelector('input[name="language"]:checked');
 
     console.log("Form is submitted");
     console.log("Full Name:", fullName.value);
@@ -22,5 +22,11 @@ form.addEventListener("submit", function(event){
         errorMessage.textContent = "Full name must be at least 3 characters.";
         isValid = false;
     }
+
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+    if (emailPattern.test(email.value)) {
+        console.log(email.value)
+        console.log("valid email")
+    } else console.log("invalid email")
 
 });
