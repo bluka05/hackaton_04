@@ -9,6 +9,8 @@ accent color: #284b63;
 body {
     color: #353535;
     max-width: 800px;
+    margin: 0 auto;
+    font-family: "Strichpunkt Sans", sans-serif;
 }
 
 #eventRegistrationForm {
@@ -19,4 +21,13 @@ body {
     border: 1px solid #284b63;
     border-radius: 18px;
     padding: 32px;
+    margin: 18px;
+}
+
+label {
+    font-size: 24px;
+}
+
+input {
+    height: 30px;
 }
