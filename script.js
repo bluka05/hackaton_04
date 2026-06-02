@@ -19,8 +19,9 @@ form.addEventListener("submit", function(event){
     
 
     if (fullName.value.trim().length < 3) {
-        errorMessage.textContent = "Full name must be at least 3 characters.";
-        isValid = false;
+        showError(fullName, "Please enter Name with 3 letters or more")
+    } else {
+        console.log("Full Name:", fullName.value);
     }
 
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
@@ -44,6 +45,14 @@ form.addEventListener("submit", function(event){
         console.log(`Number of Occupants: ${occupants}`)
     } else {
         showError(occupants, "Please enter a valid occupant number.")
+    }
+
+    const sinPattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{3}$/;
+    if (sinPattern.test(sin.value)) {
+        console.log("Sin Number:", sin.value)
+    } else {
+        showError(sin, "Please enter a valid sin number")
+    
     }
     
 });
