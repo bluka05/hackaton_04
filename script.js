@@ -29,6 +29,7 @@ form.addEventListener("submit", function(event){
         console.log("valid email")
     } else {
 
+<<<<<<< HEAD
         showError(email, "Please enter valid format")
         console.log("invalid email")
     }
@@ -42,3 +43,14 @@ function showError(element, message) {
     mess.style.color = "red";
     element.before(mess)
 }
+=======
+    const phonePattern = /^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/
+    if (phonePattern.test(phone.value)) {
+        console.log(phone.value)
+        console.log("valid phone")
+    } else {
+        console.log("invalid phone")
+        console.log(phone.value)
+    }
+});
+>>>>>>> 3ac72119dc65e992bbf5b0d121d5bafc87cdeafa
