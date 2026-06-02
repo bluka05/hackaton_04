@@ -9,19 +9,14 @@ form.addEventListener("submit", function(event){
     const occupants = document.getElementById("occupants");
     const sin = document.getElementById("sin");
     const language = document.querySelector('input[name="language"]:checked');
+    const langSection = document.getElementById("language-section")
 
-    console.log("Form is submitted");
-    console.log("Full Name:", fullName.value);
+
     
-    console.log("Occupants:", occupants.value);
-    console.log("Sin Number:", sin.value);
-    console.log("Language spoken:", language.value);
+    // console.log("Sin Number:", sin.value);
+    // console.log("Language spoken:", language.value);
     
 
-    if (fullName.value.trim().length < 3) {
-        errorMessage.textContent = "Full name must be at least 3 characters.";
-        isValid = false;
-    }
 
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     if (emailPattern.test(email.value)) {
@@ -38,12 +33,17 @@ form.addEventListener("submit", function(event){
     
     }
 
-
-    const occupantPattern = /^\d{2}$/;
-    if (occupantPattern.test(occupants.value)) {
-        console.log(`Number of Occupants: ${occupants}`)
-    } else {
+    if (occupants.value < 1) {
         showError(occupants, "Please enter a valid occupant number.")
+        console.log(occupants.value)
+    } else {
+        console.log(`Number of Occupants: ${occupants.value}`)
+    }
+
+    if (language === null) {
+        showError(langSection, "Please choose a language.")
+    } else {
+        console.log("Language spoken at home:", language.value)
     }
     
 });
